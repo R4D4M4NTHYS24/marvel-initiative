@@ -1,0 +1,176 @@
+
+body{
+	margin: 0;
+	font-family: Arial;
+}
+
+nav{
+  display: flex;
+  background-color: black;
+  padding: green;
+  color: black;
+  
+  align-items: center;
+}
+
+nav ul{
+  padding-left: 200px;
+  display: flex;
+}
+
+nav li{
+  padding-left: 20px;
+  list-style: none;
+
+}
+
+nav li a{
+  color: #ff9800;
+  text-decoration: none;
+}
+
+nav li a:hover{
+  color: white;
+}
+
+.logo_image{
+	padding-left: 5px;
+	padding-top: 3px;
+}
+
+.post-list{
+	display: grid;
+	grid-template-columns: repeat(7, minmax(100px, 293px));
+	justify-content: center;
+	grid-gap: 28px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.post{
+	cursor: pointer;
+	position: relative;
+	display: block;
+	
+}
+.post-image{
+	margin: 0;
+}
+.post-image img{
+	width: 100%;
+	vertical-align: top;
+}
+.post-overlay{
+	background: rgba(0,0,0, .4);
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-align: center;
+}
+
+.post:hover .post-overlay{
+	display: flex;
+}
+
+.post-likes, .post-comments{
+	width: 80px;
+	margin: 5px;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+}
+
+.main_button{
+	margin: 30px;
+  	background-color: black;
+  	margin-left: 64%;
+  	width: 20%;  			 	
+  	padding: 10px;
+  	color: white;
+  	border: 0;
+  	cursor: pointer;
+  	border-radius: 2px; 
+
+}
+
+.main_button:hover{
+  	background-color: #ff9800;
+}
+
+.post-list{
+	display: grid;
+	grid-template-columns: repeat(7, minmax(100px, 293px));
+	justify-content: center;
+	grid-gap: 28px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.btns{
+	display: grid;
+	grid-template-columns: repeat(2, minmax(100px, 200px));
+	justify-content: center;
+	grid-gap: 28px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.next{
+	
+	text-decoration: none;
+	text-align: center;	
+	margin: 30px;
+	padding: 10px;
+	border-radius: 2px;
+	color: white;
+	background-color: black;
+	border: 0;
+  	cursor: pointer;	 
+
+}
+
+.next:hover{
+  	background-color: #ff9800;
+}
+
+.prev{	
+  
+	text-decoration: none;
+	text-align: center;	
+	margin: 30px;
+	padding: 10px;
+	border-radius: 2px;
+	color: white;
+	background-color: black;
+	border: 0;
+  	cursor: pointer;
+
+}
+
+.prev:hover{
+  	background-color: #ff9800;
+}
+
+@media screen and (max-width: 768px){
+	.main_button{
+  	margin-left: 80%;
+  	width: 22%;
+	}
+
+	nav ul{
+  		padding-left: 20px;
+  		display: flex;
+	}
+
+	
+	.post-list{
+		display: grid;
+		grid-template-columns: repeat(3, minmax(100px, 293px));
+		grid-gap: 3px;
+	}
+}
