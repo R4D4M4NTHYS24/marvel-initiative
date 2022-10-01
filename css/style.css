@@ -281,6 +281,31 @@ a .title-card:active {
 }
 
 /**************************/
+/*DETAILS HTML*/
+/**************************/
+.btn-results {
+  width: 100px;
+  height: 100px;
+  color: #000;
+}
+
+.go-btn-results {
+  width: 100px;
+  height: 100px;
+  color: #000;
+}
+
+.go-btn-results:link,
+.go-btn-results:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #f11e22;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+/**************************/
 /*PRELOAD*/
 /**************************/
 

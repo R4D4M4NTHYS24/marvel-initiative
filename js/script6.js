@@ -48,6 +48,8 @@ const removeRenderSpinner = function (markup) {
 };
 */
 const printCharacter = function (character) {
+  let offset = 1;
+  let page = 1;
   let contentHTML = "";
   contentHTML = `
  
@@ -72,6 +74,13 @@ const printCharacter = function (character) {
         thumbnail: character.thumbnail.path,
         description: character.description,
         extension: character.thumbnail.extension,
+      })
+    );
+    localStorage.setItem(
+      "pagination",
+      JSON.stringify({
+        page: page,
+        offset: offset,
       })
     );
   });
