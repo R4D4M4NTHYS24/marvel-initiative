@@ -1,48 +1,39 @@
 "use stric";
 //import icons from "url:../../img/svg/capAmerica.svg";
 
-// definir 25 en variable para si se decide cambiar el limite de las cards sea mas escalable y tambien usar los selectores en variables
-/*Codigo para consumir API junto con los metodos manejadores de las promesas obtenidas
-este es el primer paso para construir una web dinamica
-
-primer paso: obtener datos y formatearlos como objeto
-
-/////////////////////////////////////////////////////////
-*/
+/*******************  Definicion de variables ***********************************/
 
 const frameData = document.querySelector(".character");
 const pagination = document.querySelector(".pagination");
 const buttonForward = document.querySelector(".button-forward");
 const buttonBack = document.querySelector(".button-back");
 const spinner = document.getElementsByClassName("spinner");
-let postElements = document.getElementsByClassName("post");
+const postElements = document.getElementsByClassName("post");
 let limitRanged;
 let count = 0;
-let markup;
 let res;
 let characters;
 let offset = 1;
 let page = 1;
+let totalPages;
+let totalPagesNumber;
 const cardsLimit = 25;
 /*
 if (window.localStorage.length < 3) {
   characters = 36; //uso solo para test en ultima pagina
 }
 */
-const getLocalStorageCharacters = function () {
-  characters = JSON.parse(localStorage.getItem(`count`));
-};
+/*******************  Definicion de funciones ***********************************/
 
 const getLocalStoragePages = function () {
   let pages = JSON.parse(localStorage.getItem(`pagination`));
   offset = pages.offset;
   page = pages.page;
-  getLocalStorageCharacters();
 };
 
 /* funcion encargada de pintar la precarga (View) */
 const renderSpinner = function () {
-  markup = `
+  const markup = `
   <div class="spinner">
     <svg>
     <img src="/img/svg/portalStrange.svg" class="icons-home" alt="cap-shield"">
@@ -53,19 +44,68 @@ const renderSpinner = function () {
   return frameData.insertAdjacentHTML("afterbegin", markup);
 };
 
+const numberPage = function (page) {
+  let currentPage = `
+  <div class="page">
+    <p>${page} of ${totalPagesNumber}</p>
+  </div>
+  `;
+
+  return pagination.insertAdjacentHTML("beforeend", currentPage);
+};
+
+/* funcion encargada de pintar los personajes en el DOM (View) */
+const printCharacter = function (character) {
+  let contentHTML = "";
+  contentHTML = `
+ 
+  <a href="details.html" class="post ${character.id}" 
+      <figure class="post-image">
+        <img class="cards-home" src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="marvel-character-image">
+      </figure>
+      <p class="title-card">${character.name}</p>
+    
+   </a> `;
+
+  frameData.insertAdjacentHTML("afterbegin", contentHTML);
+
+  /* es el event listener encargado de detectar el click del usuario en las cards */
+  postElements[0].addEventListener("click", function () {
+    localStorage.setItem(
+      "selected",
+      JSON.stringify({
+        id: character.id,
+        name: character.name,
+        thumbnail: character.thumbnail.path,
+        description: character.description,
+        extension: character.thumbnail.extension,
+      })
+    );
+  });
+
+  frameData.removeChild(spinner[0]);
+};
+
+/*************************flujo principal de la aplicacion ****************************/
+
 //console.log(window.localStorage.length);
 if (window.localStorage.length > 2) {
+  characters = JSON.parse(localStorage.getItem(`count`));
   getLocalStoragePages();
 } else {
   offset = 1; //recordar volver a poner en 1(valor de prueba ultima pagina 1526)
   page = 1;
 }
 
-/* 
-Llamada inicial del API de aca se obtiene el total de personajes 
-y el limite del ciclo encargado de mostrar las cards random del home
-(Model)
+/*
+Codigo para consumir API junto con los metodos manejadores de las promesas obtenidas
+este es el primer paso para construir una web dinamica
+
+primer paso: obtener datos y formatearlos como objeto
+
+/////////////////////////////////////////////////////////
 */
+
 if (characters < cardsLimit) {
   res = await fetch(
     `https://gateway.marvel.com:443/v1/public/characters?limit=${characters}&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
@@ -76,21 +116,19 @@ if (characters < cardsLimit) {
   );
 }
 
+/***************** listener encargado del boton de avanzar de la paginacion ******************************/
 buttonForward.addEventListener("click", async function () {
   offset = offset + 25;
   page++;
   if (characters >= cardsLimit) {
     for (let j = 24; j >= 0; j--) {
       frameData.removeChild(postElements[j]);
-      //console.log(postElements[j], j);
     }
     res = await fetch(
       `https://gateway.marvel.com:443/v1/public/characters?limit=${cardsLimit}&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
     );
     controllerMarvelCharacter(res);
   } else {
-    console.log("entre else");
-    console.log(characters);
     for (let j = characters; j >= 0; j--) {
       frameData.removeChild(postElements[j]);
     }
@@ -100,21 +138,24 @@ buttonForward.addEventListener("click", async function () {
     controllerMarvelCharacter(res);
   }
   characters -= 25;
+  console.log(characters);
   localStorage.setItem("count", JSON.stringify(characters));
 
   pagination.removeChild(document.querySelector(".page"));
 
-  count = offset;
+  count = characters;
 
   localStorage.setItem(
     "pagination",
     JSON.stringify({
       page: page,
       offset: offset,
+      totalPagesNumber: totalPagesNumber,
     })
   );
 });
 
+/***************** listener encargado del boton de retroceder de la paginacion ******************************/
 buttonBack.addEventListener("click", async function () {
   offset = offset - 25;
   page--;
@@ -139,66 +180,25 @@ buttonBack.addEventListener("click", async function () {
   }
   characters += 25;
 
+  console.log(characters);
   localStorage.setItem("count", JSON.stringify(characters));
 
   pagination.removeChild(document.querySelector(".page"));
 
-  count = offset;
+  count = characters;
 
   localStorage.setItem(
     "pagination",
     JSON.stringify({
       page: page,
       offset: offset,
+      totalPagesNumber: totalPagesNumber,
     })
   );
 });
 
-const numberPage = function (page) {
-  let currentPage = `
-  <div class="page">
-    <p>${page}</p>
-  </div>
-  `;
-
-  return pagination.insertAdjacentHTML("beforeend", currentPage);
-};
-
-/* funcion encargada de pintar los personajes en el DOM (View) */
-const printCharacter = function (character) {
-  let contentHTML = "";
-  contentHTML = `
- 
-  <a href="details.html" class="post ${character.id}" 
-      <figure class="post-image">
-        <img class="cards-home" src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="marvel-character-image">
-      </figure>
-      <p class="title-card">${character.name}</p>
-    
-   </a> `;
-
-  frameData.insertAdjacentHTML("afterbegin", contentHTML);
-
-  postElements[0].addEventListener("click", function () {
-    localStorage.setItem(
-      "selected",
-      JSON.stringify({
-        id: character.id,
-        name: character.name,
-        thumbnail: character.thumbnail.path,
-        description: character.description,
-        extension: character.thumbnail.extension,
-      })
-    );
-  });
-  /* es el event listener encargado de detectar el click del usuario en las cards */
-  frameData.removeChild(spinner[0]);
-};
-
 /* controlador principal de la app */
 const controllerMarvelCharacter = async function (res) {
-  numberPage(page); //numero de la pagina actual
-
   try {
     let data = await res.json();
 
@@ -206,6 +206,15 @@ const controllerMarvelCharacter = async function (res) {
       characters = data.data.total;
     }
 
+    if (totalPages === undefined) {
+      console.log("entre totalPages");
+      totalPages = data.data.total;
+      totalPagesNumber = Math.ceil(totalPages / cardsLimit);
+    }
+
+    /*totalPages = characters; linea para test en ultima pagina */
+
+    numberPage(page); //numero de la pagina actual
     limitRanged = data.data.limit;
 
     //codigo que oculta el boton de atras en la pagina 1
@@ -215,7 +224,7 @@ const controllerMarvelCharacter = async function (res) {
       document.querySelector(".page");
       buttonBack.style.display = "block";
     }
-    console.log(characters);
+    //console.log(totalPages);
     console.log(offset);
 
     //codigo para ocultar el boton avanzar en la ultima pagina

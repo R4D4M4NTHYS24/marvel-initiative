@@ -16,8 +16,9 @@ let postElements = document.getElementsByClassName("post");
 /* variables */
 let cardsRandom;
 let limitRanged;
-let count = 0;
+let count;
 let markup;
+let totalPages;
 /* 
 Llamada inicial del API de aca se obtiene el total de personajes 
 y el limite del ciclo encargado de mostrar las cards random del home
@@ -74,6 +75,7 @@ const printCharacter = function (character) {
       JSON.stringify({
         page: page,
         offset: offset,
+        //count: count,
       })
     );
   });
@@ -88,6 +90,8 @@ const controllerMarvelCharacter = async function () {
 
     const characters = data.data.total;
     limitRanged = data.data.limit;
+
+    count = data.data.total;
 
     for (let k = 0; k < limitRanged; k++) {
       renderSpinner();
