@@ -8,13 +8,12 @@ primer paso: obtener datos y formatearlos como objeto
 
 /////////////////////////////////////////////////////////
 */
-//localhost/character/${character.id}
-//let characterA = document.querySelector(".post-list");
-
+/* selectores */
 const frameData = document.querySelector(".random");
 const spinner = document.getElementsByClassName("spinner");
 let postElements = document.getElementsByClassName("post");
-let cardElements = document.getElementById("*");
+
+/* variables */
 let cardsRandom;
 let limitRanged;
 let count = 0;
@@ -29,8 +28,6 @@ const res = await fetch(
   `https://gateway.marvel.com:443/v1/public/characters?limit=3&offset=${1}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
 );
 
-/* funcion encargada de pintar los personajes en el DOM (View) */
-
 const renderSpinner = function () {
   markup = `
   <div class="spinner">
@@ -42,11 +39,8 @@ const renderSpinner = function () {
 
   return frameData.insertAdjacentHTML("afterbegin", markup);
 };
-/*
-const removeRenderSpinner = function (markup) {
-  frameData.clear();
-};
-*/
+
+/* funcion encargada de pintar los personajes en el DOM (View) */
 const printCharacter = function (character) {
   let offset = 1;
   let page = 1;
@@ -61,10 +55,9 @@ const printCharacter = function (character) {
     
    </a> `;
 
-  //frameData.nodeName.removeChild(frameData2);
   frameData.insertAdjacentHTML("afterbegin", contentHTML);
-  //removeRenderSpinner(spinner);
 
+  /* es el event listener encargado de detectar el click del usuario */
   postElements[0].addEventListener("click", function () {
     localStorage.setItem(
       "selected",
@@ -84,7 +77,7 @@ const printCharacter = function (character) {
       })
     );
   });
-  /* es el event listener encargado de detectar el click del usuario (controller) */
+
   frameData.removeChild(spinner[0]);
 };
 
@@ -110,7 +103,6 @@ const controllerMarvelCharacter = async function () {
     console.log("1");
     await charactersPromiseAll(randomPositions);
     console.log("3");
-    //console.log(postElements);
 
     if (!res.ok) throw new Error(`conection API error status${res.status}`);
   } catch (err) {
@@ -149,5 +141,3 @@ function buildApiCall(positions) {
 
 controllerMarvelCharacter(res);
 console.log("online1");
-
-//const valores = window.location.search;
