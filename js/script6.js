@@ -75,9 +75,9 @@ const printCharacter = function (character) {
       JSON.stringify({
         page: page,
         offset: offset,
-        //count: count,
       })
     );
+    localStorage.setItem("count", JSON.stringify(count));
   });
 
   frameData.removeChild(spinner[0]);
