@@ -17,10 +17,12 @@ let offset = 1;
 let page = 1;
 let totalPages;
 let totalPagesNumber;
+let lastPage = 0;
 const cardsLimit = 25;
+
 /*
 if (window.localStorage.length < 3) {
-  characters = 36; //uso solo para test en ultima pagina
+  characters = 37; //uso solo para test en ultima pagina
 }
 */
 /*******************  Definicion de funciones ***********************************/
@@ -107,8 +109,12 @@ primer paso: obtener datos y formatearlos como objeto
 */
 
 if (characters < cardsLimit) {
+  //characters--;
+  console.log(characters);
   res = await fetch(
-    `https://gateway.marvel.com:443/v1/public/characters?limit=${characters}&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
+    `https://gateway.marvel.com:443/v1/public/characters?limit=${
+      characters - 1
+    }&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
   );
 } else {
   res = await fetch(
@@ -118,10 +124,17 @@ if (characters < cardsLimit) {
 
 /***************** listener encargado del boton de avanzar de la paginacion ******************************/
 buttonForward.addEventListener("click", async function () {
+  console.log("btn");
   offset = offset + 25;
   page++;
-  if (characters >= cardsLimit) {
-    for (let j = 24; j >= 0; j--) {
+
+  characters -= 25;
+  console.log(characters);
+  localStorage.setItem("count", JSON.stringify(characters));
+
+  if (characters - 1 >= cardsLimit) {
+    console.log("entre al 25");
+    for (let j = cardsLimit - 1; j >= 0; j--) {
       frameData.removeChild(postElements[j]);
     }
     res = await fetch(
@@ -129,17 +142,21 @@ buttonForward.addEventListener("click", async function () {
     );
     controllerMarvelCharacter(res);
   } else {
-    for (let j = characters; j >= 0; j--) {
+    console.log("entre forward");
+
+    for (let j = cardsLimit - 1; j >= 0; j--) {
       frameData.removeChild(postElements[j]);
     }
+
     res = await fetch(
-      `https://gateway.marvel.com:443/v1/public/characters?limit=${characters}&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
+      `https://gateway.marvel.com:443/v1/public/characters?limit=${
+        characters - 1
+      }&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
     );
     controllerMarvelCharacter(res);
   }
-  characters -= 25;
-  console.log(characters);
-  localStorage.setItem("count", JSON.stringify(characters));
+
+  //console.log(characters);
 
   pagination.removeChild(document.querySelector(".page"));
 
@@ -159,8 +176,19 @@ buttonForward.addEventListener("click", async function () {
 buttonBack.addEventListener("click", async function () {
   offset = offset - 25;
   page--;
+
+  characters += 25;
+
+  localStorage.setItem("count", JSON.stringify(characters));
+
+  if (lastPage > 0) {
+    characters = lastPage;
+    localStorage.setItem("count", JSON.stringify(characters));
+    lastPage = 0;
+  }
+
   if (characters >= cardsLimit) {
-    for (let j = 24; j >= 0; j--) {
+    for (let j = cardsLimit - 1; j >= 0; j--) {
       frameData.removeChild(postElements[j]);
     }
     res = await fetch(
@@ -168,20 +196,21 @@ buttonBack.addEventListener("click", async function () {
     );
     controllerMarvelCharacter(res);
   } else {
+    console.log("al else");
+
     for (let j = characters - 1; j >= 0; j--) {
       frameData.removeChild(postElements[j]);
       console.log(postElements[j], j);
     }
-
+    console.log(characters);
+    characters = characters + cardsLimit + 1;
+    console.log(characters);
+    localStorage.setItem("count", JSON.stringify(characters));
     res = await fetch(
-      `https://gateway.marvel.com:443/v1/public/characters?limit=${characters}&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
+      `https://gateway.marvel.com:443/v1/public/characters?limit=${cardsLimit}&offset=${offset}&ts=1&apikey=b9d822d427ddad8905c9e71d7f83b60f&hash=670d244bbd5442995de438e9125bfd80`
     );
     controllerMarvelCharacter(res);
   }
-  characters += 25;
-
-  console.log(characters);
-  localStorage.setItem("count", JSON.stringify(characters));
 
   pagination.removeChild(document.querySelector(".page"));
 
@@ -224,7 +253,7 @@ const controllerMarvelCharacter = async function (res) {
       document.querySelector(".page");
       buttonBack.style.display = "block";
     }
-    //console.log(totalPages);
+
     console.log(offset);
 
     //codigo para ocultar el boton avanzar en la ultima pagina
@@ -235,10 +264,15 @@ const controllerMarvelCharacter = async function (res) {
       buttonForward.style.display = "block";
     }
 
-    if (characters <= cardsLimit) {
-      limitRanged = characters;
+    if (characters < cardsLimit) {
+      limitRanged = characters - 1;
+      console.log("265", characters);
+      lastPage = limitRanged;
+    } else {
+      limitRanged = cardsLimit;
+      console.log("265 else", cardsLimit);
     }
-    console.log(limitRanged);
+    console.log(characters);
 
     /*codigo encargado de pintar la precarga en las cards*/
     for (let k = 0; k < limitRanged; k++) {
