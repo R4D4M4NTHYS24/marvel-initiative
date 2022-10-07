@@ -211,6 +211,7 @@ a .title-card:active {
 #myModal:target {
   opacity: 1;
   pointer-events: auto;
+  z-index: 1000;
 }
 
 /**************************/
