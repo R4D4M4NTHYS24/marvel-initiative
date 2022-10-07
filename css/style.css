@@ -156,6 +156,63 @@ a .title-card:active {
   text-align: center;
 }
 
+/***************************/
+/*MODAL*/
+/***************************/
+.cards-modal {
+  width: 50rem;
+  height: 40rem;
+}
+
+.modal-title-card {
+  width: 50rem;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 3.2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.modal-description-card {
+  width: 50rem;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 3.2rem;
+  color: #000;
+}
+
+.modal-content {
+  background-color: white;
+  position: relative;
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  height: 80rem;
+  width: 120rem;
+  background-repeat: no-repeat;
+}
+
+.close-modal {
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#myModal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /**************************/
 /*FOOTER*/
 /**************************/
