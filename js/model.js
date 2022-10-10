@@ -1,5 +1,4 @@
 "use stric";
-//import icons from "url:../../img/svg/capAmerica.svg";
 
 export const state = {
   totalcharacters: {},
@@ -31,6 +30,7 @@ export const loadCharacter = async function (limit, offset) {
     alert(`${err} please contact the administrator or try later...`);
   }
 };
+
 export const totalCharacterInit = async function () {
   try {
     const res = await fetch(
@@ -45,26 +45,3 @@ export const totalCharacterInit = async function () {
     alert(`${err} please contact the administrator or try later...`);
   }
 };
-
-//loadCharacter(1, 3);
-//console.log(state);
-/*******************  Definicion de variables **********************************
-
-const frameData = document.querySelector(".character");
-const pagination = document.querySelector(".pagination");
-const buttonForward = document.querySelector(".button-forward");
-const buttonBack = document.querySelector(".button-back");
-const spinner = document.getElementsByClassName("spinner");
-const postElements = document.getElementsByClassName("post");
-let limitRanged;
-let count = 0;
-let res;
-let characters;
-let offset = 1;
-let page = 1;
-let totalPages;
-let totalPagesNumber;
-let lastPage = 0;
-const cardsLimit = 25;
-
-*/
