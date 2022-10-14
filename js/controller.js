@@ -8,7 +8,9 @@ const frameDataCharacters = document.querySelector(".character");
 const buttonForward = document.querySelector(".button-forward");
 const buttonBack = document.querySelector(".button-back");
 const postElementsAll = document.getElementsByClassName("post");
-const pagination = document.querySelector(".pagination");
+//const pagination = document.querySelector(".pagination");
+const results = document.querySelector(".results");
+const pagination = results;
 let offset = 1;
 let page = 1;
 const cardsLimit = 25;
@@ -56,6 +58,35 @@ for (let k = 24; k >= 0; k--) {
 
 charactersView.numberPage(page, totalPages, pagination);
 
+///////////////////////////////////////////////////////////
+// Sticky navigation
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+
+    if (ent.isIntersecting === false) {
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroEl);
+
+///////////////////////////////////////////////////////////
+
 /***************** listener encargado del boton de avanzar de la paginacion *****************************/
 
 buttonForward.addEventListener("click", async function () {
@@ -86,9 +117,11 @@ buttonForward.addEventListener("click", async function () {
       cardsLimit,
       postElementsAll
     );
-    await model.loadCharacter(cardsLimit, offset);
     for (let j = cardsLimit - 1; j >= 0; j--) {
       charactersView.renderSpinnerAll(frameDataCharacters);
+    }
+    await model.loadCharacter(cardsLimit, offset);
+    for (let j = cardsLimit - 1; j >= 0; j--) {
       charactersView.printCharacterAll(
         model.state.characters[j],
         frameDataCharacters
@@ -101,9 +134,11 @@ buttonForward.addEventListener("click", async function () {
       cardsLimit,
       postElementsAll
     );
-    await model.loadCharacter(characters, offset);
     for (let j = characters - 1; j >= 0; j--) {
       charactersView.renderSpinnerAll(frameDataCharacters);
+    }
+    await model.loadCharacter(characters, offset);
+    for (let j = characters - 1; j >= 0; j--) {
       charactersView.printCharacterAll(
         model.state.characters[j],
         frameDataCharacters
@@ -124,9 +159,11 @@ buttonBack.addEventListener("click", async function () {
       characters,
       postElementsAll
     );
-    await model.loadCharacter(cardsLimit, offset);
     for (let j = cardsLimit - 1; j >= 0; j--) {
       charactersView.renderSpinnerAll(frameDataCharacters);
+    }
+    await model.loadCharacter(cardsLimit, offset);
+    for (let j = cardsLimit - 1; j >= 0; j--) {
       charactersView.printCharacterAll(
         model.state.characters[j],
         frameDataCharacters
@@ -161,9 +198,11 @@ buttonBack.addEventListener("click", async function () {
       cardsLimit,
       postElementsAll
     );
-    await model.loadCharacter(cardsLimit, offset);
     for (let j = cardsLimit - 1; j >= 0; j--) {
       charactersView.renderSpinnerAll(frameDataCharacters);
+    }
+    await model.loadCharacter(cardsLimit, offset);
+    for (let j = cardsLimit - 1; j >= 0; j--) {
       charactersView.printCharacterAll(
         model.state.characters[j],
         frameDataCharacters

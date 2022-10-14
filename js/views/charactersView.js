@@ -61,11 +61,16 @@ export const removeCharactersAll = function (
 export const numberPage = function (page, totalPages, pagination) {
   //console.log(pagination);
   let currentPage = `
+  
+
   <div class="page">
     <p>${page} of ${totalPages}</p>
   </div>
-  `;
 
+  
+  `;
+  //pagination.innerHTML = currentPage;
+  //console.log(pagination.innerHTML);
   return pagination.insertAdjacentHTML("beforeend", currentPage);
 };
 

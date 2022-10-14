@@ -81,7 +81,19 @@ body {
 .grid {
   display: grid;
   column-gap: 6.4rem;
-  row-gap: 9.6rem;
+  row-gap: 4.8rem;
+}
+
+.gridRandom {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 4.8rem;
+}
+
+.gridCharacters {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 1rem;
 }
 
 .grid--2-cols {

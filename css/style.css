@@ -8,6 +8,8 @@
   background-color: #f11e22;
   padding: 0 4.8rem;
   position: relative;
+  width: 100%;
+  height: 8rem;
 }
 
 /*
@@ -46,9 +48,22 @@
 /*HERO SECTION*/
 /**************************/
 
+/* STICKY NAVIGATION */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(241, 30, 33, 0.7);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
 .sticky .section-hero {
-  background-color: #fdf2e9;
-  padding: 4.8rem 0 9.6rem 0;
+  margin-top: 9.6rem;
 }
 /*
 @media (max-width: 1200px) {
@@ -103,28 +118,41 @@
   margin-bottom: 2rem;
 }
 
-.post {
-  height: 80rem;
-}
 .title-random {
-  margin-top: 9.6rem;
+  margin-top: 12.8rem;
   font-size: 2rem;
   line-height: 1.6;
-  margin-bottom: 3rem;
+  margin-bottom: 9.6rem;
   text-align: center;
 }
 
-.cards-home {
-  width: 100%;
-  height: 80%;
-}
-
-.cards {
+.random {
   margin-bottom: 6.4rem;
 }
 
+.cards-home {
+  width: 25rem;
+  height: 30rem;
+}
+
+.post {
+  max-width: 25rem;
+}
+
+.randomPost {
+  margin: auto;
+  max-width: 30rem;
+  max-height: 35rem;
+}
+
+.cards-characters {
+  margin-top: 6.4rem;
+}
+
 .title-card {
-  font-size: 1.6rem;
+  max-width: 25rem;
+  max-height: 3.2rem;
+  font-size: 1.2rem;
   text-align: center;
   padding: 3.2rem;
   color: #fff;
@@ -134,10 +162,6 @@
 a .title-card:hover,
 a .title-card:active {
   background-color: #f11e22;
-}
-
-.post {
-  padding: 4rem;
 }
 
 .character {
@@ -156,10 +180,19 @@ a .title-card:active {
   text-align: center;
 }
 
+.title-characters {
+  margin-bottom: 2.4rem;
+  font-size: 2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .container-cta {
+  margin-top: 12.8rem;
+  margin-bottom: 12.8rem;
   width: 120rem;
   height: 50rem;
-  background-color: #f11e22;
+  background-image: url(/img/wp8793897.jpg);
 }
 
 /***************************/
@@ -308,20 +341,10 @@ a .title-card:active {
   text-align: center;
 }
 
-.pagination {
-  max-width: 130rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9.6rem;
-  align-items: center;
-}
-
 .arrow-back,
 .arrow-forward {
-  width: 50%;
-  height: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
 }
 
 .arrow-back:hover,
@@ -367,6 +390,38 @@ a .title-card:active {
   font-weight: 500;
   font-size: 1.8rem;
   transition: all 0.3s;
+}
+
+/**************************/
+/*PAGINATION*/
+/**************************/
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.8rem;
+  position: relative;
+  max-width: 40rem;
+  margin: 6.4rem auto;
+  padding: 0 3.2rem;
+}
+
+.button-back {
+  align-items: center;
+  margin-right: auto;
+}
+
+.results {
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.button-forward {
+  align-items: center;
+  margin-left: auto;
 }
 
 /**************************/
