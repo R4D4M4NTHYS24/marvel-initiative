@@ -149,9 +149,14 @@
   margin-top: 6.4rem;
 }
 
+.cards-modal {
+  max-width: 50rem;
+  max-height: 35rem;
+}
+
 .title-card {
-  max-width: 25rem;
-  max-height: 3.2rem;
+  max-width: 30rem;
+  max-height: 3.5rem;
   font-size: 1.2rem;
   text-align: center;
   padding: 3.2rem;
@@ -159,9 +164,18 @@
   background-color: #000;
 }
 
-a .title-card:hover,
-a .title-card:active {
-  background-color: #f11e22;
+.post-image {
+  overflow: hidden;
+}
+
+.post-image img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.post-image img:hover {
+  transform: scale(1.1);
 }
 
 .character {

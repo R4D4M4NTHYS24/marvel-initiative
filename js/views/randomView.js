@@ -23,7 +23,7 @@ export const printCharacter = function (character, frameData) {
   let contentHTML = "";
   contentHTML = `
  
-  <a href="#myModal" class="randomPost ${character.id}" 
+  <a href="#myModal" class="randomPost ${character.id}">
       <figure class="post-image">
         <img class="cards-home" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
       </figure>
@@ -47,3 +47,32 @@ export const printCharacter = function (character, frameData) {
 
   frameData.removeChild(spinner[0]);
 };
+
+///////////////////////////////////////////////////////////
+// Sticky navigation
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    //console.log(ent);
+
+    if (ent.isIntersecting === false) {
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroEl);
+
+///////////////////////////////////////////////////////////

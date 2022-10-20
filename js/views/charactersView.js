@@ -23,7 +23,7 @@ export const printCharacterAll = function (character, frameData) {
   let contentHTML = "";
   contentHTML = `
  
-  <a href="#myModal" class="post ${character.id}" 
+  <a href="#myModal" class="post ${character.id}">
       <figure class="post-image">
         <img class="cards-home" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
       </figure>
@@ -40,8 +40,8 @@ export const printCharacterAll = function (character, frameData) {
       </figure>
     <p class="modal-title-card">${character.name}</p>
     <p class="modal-description-card">${character.description}</p>
-    <a class="close-modal" href="#"><strong>( X )</strong></a>`;
-    console.log(postElements);
+    <a class="close-modal" href="#characters"><strong>( X )</strong></a>`;
+
     modalData.innerHTML = modalContent;
   });
 
