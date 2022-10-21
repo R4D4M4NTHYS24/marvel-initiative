@@ -92,12 +92,14 @@ body {
 
 .gridCharacters {
   display: grid;
-  column-gap: 5rem;
-  row-gap: 5rem;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  width: 120rem;
+  margin: auto;
 }
 
 .grid--2-cols {
-  grid-template-columns: repeat(2, 2fr 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .grid--3-cols {
@@ -105,8 +107,6 @@ body {
 }
 
 .grid--5-cols {
-  max-width: 120rem;
-  margin: auto;
   grid-template-columns: repeat(5, 1fr);
 }
 

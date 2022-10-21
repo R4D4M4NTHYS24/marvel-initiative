@@ -41,7 +41,6 @@ export const printCharacter = function (character, frameData) {
     <p class="modal-title-card">${character.name}</p>
     <p class="modal-description-card">${character.description}</p>
     <a class="close-modal" href="#"><strong>( X )</strong></a>`;
-    console.log(postElements);
     modalData.innerHTML = modalContent;
   });
 

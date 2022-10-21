@@ -8,6 +8,10 @@ const frameDataCharacters = document.querySelector(".character");
 const buttonForward = document.querySelector(".button-forward");
 const buttonBack = document.querySelector(".button-back");
 const postElementsAll = document.getElementsByClassName("post");
+const form = document.getElementById("form");
+let name = document.getElementById("name");
+
+let userObject = {};
 //const pagination = document.querySelector(".pagination");
 const results = document.querySelector(".results");
 const pagination = results;
@@ -57,8 +61,6 @@ for (let k = 24; k >= 0; k--) {
 }
 
 charactersView.numberPage(page, totalPages, pagination);
-
-
 
 /***************** listener encargado del boton de avanzar de la paginacion *****************************/
 
@@ -183,4 +185,16 @@ buttonBack.addEventListener("click", async function () {
     }
   }
   flag = true;
+});
+
+/***************** formulario de contacto *****************************/
+console.log(form);
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  userObject.name = name.value;
+  userObject.email = email.value;
+  userObject.message = message.value;
+  console.log("envie");
+  localStorage.setItem("submit", JSON.stringify(userObject));
+  console.log(userObject);
 });
