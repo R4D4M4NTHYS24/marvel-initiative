@@ -374,56 +374,55 @@
 /*CONTACT*/
 /**************************/
 
-main .contact {
-  margin-bottom: 40px;
+.form-contact {
+  background: #fff;
+  width: 40rem;
+
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
 }
 
-.contact-information {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 11px 18px;
+.contact {
+  padding: 0.8rem;
+  overflow: hidden;
+  color: #000;
 }
 
-.contact-information > div {
-  width: 50%;
-  text-align: left;
-}
-
-.contact-information > div span {
-  font-weight: 500;
-  font-size: 13px;
-}
-.contact-form {
-  margin-top: 50px;
-}
-.contact-form form {
-  padding: 20px 20px;
-}
-
-.contact-form .double-line {
-  display: flex;
-  margin-bottom: 30px;
-}
-
-.contact-form .double-line > div {
-  flex: 1;
-  padding-right: 15px;
-}
-
-.contact-form .double-line input {
+.contact label,
+.contact input,
+.contact textarea {
+  display: block;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
-.contact-form button {
+.contact label {
+  font-weight: 700;
+}
+
+.contact input:not([type="submit"]),
+.contact textarea {
   border: none;
-  width: auto;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  margin-top: 20px;
+  border-bottom: 0.2rem solid #000;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  outline: none;
+  color: gray;
 }
 
-.contact-form button:hover {
-  color: #2eca7f;
+.contact textarea {
+  min-height: 10rem;
+}
+
+input[type="submit"] {
+  padding: 1rem;
+  background: #f11e22;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  /* pointer-events: none; */
+  cursor: pointer;
 }
 /**************************/
 /*FOOTER*/

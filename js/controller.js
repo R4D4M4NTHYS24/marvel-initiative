@@ -187,7 +187,7 @@ buttonBack.addEventListener("click", async function () {
   flag = true;
 });
 
-/***************** formulario de contacto *****************************/
+/***************** formulario de contacto ****************************
 console.log(form);
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -198,3 +198,4 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("submit", JSON.stringify(userObject));
   console.log(userObject);
 });
+*/
