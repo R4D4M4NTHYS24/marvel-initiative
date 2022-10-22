@@ -90,12 +90,174 @@
 
 .hero-description {
   font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
+  line-height: 1.8;
 }
 
 .hero-img {
   width: 100%;
+}
+
+/* cta */
+/*
+.cta {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.text-line {
+  margin-bottom: 1rem;
+}
+*/
+.cta-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 2.4rem;
+  margin-top: 6.4rem;
+}
+
+.cta-img {
+  width: 30rem;
+  height: 28rem;
+}
+
+.post-photo img {
+  display: block;
+  width: 100%;
+  /*transition: all 0.4s;*/
+}
+/*
+.post-photo img:hover {
+  transform: scale(1.1);
+}
+
+.title-photo {
+  max-width: 40rem;
+  max-height: 3.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 3.2rem;
+  color: #fff;
+  background-color: #000;
+}
+*/
+.title {
+  text-align: left;
+  margin-top: 12.8rem;
+  padding: 0 0 5px 0;
+  position: relative;
+  font-size: 17px;
+  color: #171717;
+  line-height: 21px;
+  font-weight: 500;
+}
+/*
+.title::after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: -15px;
+  width: 95%;
+  height: 1px;
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.7) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+*/
+.line-left {
+  position: relative;
+}
+.line-left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(197, 202, 213, 0.7) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.line-down {
+  position: relative;
+}
+
+.line-down::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.7) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.resume-skills {
+  margin-top: 50px;
+}
+.resume-skills > div {
+  display: flex;
+}
+.resume-skills > div section {
+  flex: 1;
+  text-align: left;
+}
+
+.resume-skills > div section > div {
+  padding: 18px 20px;
+}
+
+.resume-skills > div section > div > div:first-child {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  line-height: 14px;
+  color: #626262;
+  text-align: left;
+}
+
+.resume-skills > div section > div > div:last-child {
+  width: 100%;
+  background: #d8dbe2;
+  height: 4px;
+}
+
+.resume-skills > div section > div > div > div {
+  background: #f11e22;
+  height: 4px;
+}
+
+.resume-skills h4 {
+  margin: 0;
+  text-align: left;
+  padding: 20px 18px;
+  font-size: 13px;
+  line-height: 13px;
+  color: #171717;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.resume-skills h4 .fas {
+  position: relative;
+  float: left;
+  top: -7px;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  color: #f11e22;
 }
 
 /* features */
@@ -105,8 +267,8 @@
 }
 
 .feature-text {
-  font-size: 1.8rem;
-  line-height: 1.8;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 /* ramdon */
@@ -203,18 +365,11 @@
 }
 
 .title-characters {
+  margin-top: 9.6rem;
   margin-bottom: 2.4rem;
   font-size: 2rem;
   line-height: 1.6;
   text-align: center;
-}
-
-.container-cta {
-  margin-top: 12.8rem;
-  margin-bottom: 12.8rem;
-  width: 120rem;
-  height: 50rem;
-  background-image: url(/img/wp8793897.jpg);
 }
 
 /***************************/
@@ -305,6 +460,9 @@
 /**************************/
 /* HOW IT WORKS SECTION */
 /**************************/
+.step-img-box img {
+  max-height: 50rem;
+}
 
 .z-patron {
   font-size: 3rem;
@@ -312,7 +470,7 @@
   margin-bottom: 4.8rem;
 }
 
-.section-how {
+.section-z-patron {
   padding: 9.6rem 0;
 }
 
@@ -423,6 +581,27 @@ input[type="submit"] {
   font-size: 2rem;
   /* pointer-events: none; */
   cursor: pointer;
+}
+
+.title-contact {
+  margin-bottom: 2.4rem;
+  font-size: 2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.contact-img {
+  width: 100%;
+}
+
+.contact-area {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
 }
 /**************************/
 /*FOOTER*/
