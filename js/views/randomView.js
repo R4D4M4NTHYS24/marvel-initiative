@@ -45,7 +45,7 @@ export const printCharacter = function (character, frameData) {
     <figure class="post-image-selected">
         <img class="cards-modal" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
       </figure>
-      <a class="close-modal" href="#"><strong>(X)</strong></a>  
+      <a class="close-modal" href="#"><strong>X</strong></a>  
     </div>`;
     modalData.innerHTML = modalContent;
   });

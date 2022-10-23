@@ -25,9 +25,9 @@ export const printCharacterAll = function (character, frameData) {
  
   <a href="#myModal" class="post ${character.id}">
       <figure class="post-image">
-        <img class="cards-home" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
+        <img class="cards-characters" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
       </figure>
-      <p class="title-card">${character.name}</p>
+      <p class="title-name-characters">${character.name}</p>
     
    </a> `;
 
@@ -45,7 +45,7 @@ export const printCharacterAll = function (character, frameData) {
     <figure class="post-image-selected">
         <img class="cards-modal" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
       </figure>
-      <a class="close-modal" href="#characters"><strong>(X)</strong></a>  
+      <a class="close-modal" href="#characters"><strong>X</strong></a>  
     </div>
     
     `;

@@ -87,15 +87,17 @@ body {
 .gridRandom {
   display: grid;
   column-gap: 6.4rem;
-  row-gap: 4.8rem;
+  row-gap: 9.6rem;
 }
 
 .gridCharacters {
   display: grid;
-  gap: 1.6rem;
+  column-gap: 1px;
+  row-gap: 9.6rem;
   padding: 1.6rem;
   width: 120rem;
   margin: auto;
+  margin-bottom: 20rem;
 }
 
 .grid--2-cols {
@@ -128,6 +130,12 @@ body {
   font-weight: 700;
   color: #333;
   letter-spacing: -0.5px;
+}
+
+.heading-fourty {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
 }
 
 .heading-primary {

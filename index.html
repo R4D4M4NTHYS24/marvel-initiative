@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/css/general.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/queries.css" />
     <link rel="stylesheet" href="/img/svg/capAmerica.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    
+
+    
   </head>
 
   <body>
@@ -32,6 +37,11 @@
           <li><a class="main-nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
     </header>
 
     <main>
@@ -99,14 +109,28 @@
         <div class="random gridRandom grid--3-cols container"></div>
           
           <div class="container container-cta">
-            <section class="resume-skills">
+            <section class="resume-skills" id="about-this-me">
               <h3 class="title">About this me</h3>
               <div class="cta-description">
               <p>I am Camilo Restrepo, web designer from Colombia, Medellín. I have experience in web site design and building and customization, also I am good at business. I would love to talk to you about our work. Then look at my skills:</p>
             </div>
               <div>
+                
+                  <section class="cta">
+                   <div class="space-photo"></div>
+                        <picture class="post-photo">
+                          <!-- <source srcset="img/hero.webp" type="image/webp" /> 
+                          <source srcset="/img/image-comics-desktop.png" type="image/png" />-->
+                          <img
+                            src="/img/project/profile.jpg"
+                            class="cta-img"
+                            alt="Woman enjoying food, meals in storage container and food bowls on a table"
+                          />
+                         
+                        </picture>
+                      </section>
                   <section class="line-left">
-                      <h4 class="line-down"> <i class="fas fa-tv"></i> DESIGN</h4>
+                      <h4 class="line-down heading-fourty"> <i class="fas fa-tv"></i> DESIGN</h4>
                       <div class="line-down">
                           <div>Web Design</div>
                           <div>
@@ -133,7 +157,7 @@
                       </div>
                   </section>
                   <section class="line-left">
-                      <h4 class="line-down"><i class="fas fa-code"></i> CODING</h4>
+                      <h4 class="line-down heading-fourty"><i class="fas fa-code"></i> CODING</h4>
                       <div class="line-down">
                           <div>UX/UI</div>
                           <div>
@@ -160,20 +184,7 @@
                       </div>
                       
                   </section>
-                  <div class="space-photo"></div>
-                  <section class="cta">
-                   
-                        <picture class="post-photo">
-                          <!-- <source srcset="img/hero.webp" type="image/webp" /> 
-                          <source srcset="/img/image-comics-desktop.png" type="image/png" />-->
-                          <img
-                            src="/img/project/profile.jpg"
-                            class="cta-img"
-                            alt="Woman enjoying food, meals in storage container and food bowls on a table"
-                          />
-                         
-                        </picture>
-                      </section>
+                  
                       </div>
                     </div>
                   
@@ -255,7 +266,7 @@
       </div> 
 
 
-      <div class="gallery">
+      <div class="gallery" id="mockups">
         <figure class="gallery-item">
           <img
             src="/img/mockups/picsmarvelproject/mockup-home.jpg"
@@ -372,7 +383,7 @@
         
       <div class="container grid grid--2-cols grid--center-v">
         <!-- STEP 01 -->
-        <div class="step-text-box">
+        <div class="step-text-box" id="documentation">
           
           <p class="z-patron">
             See my complete documentation present in this project
@@ -392,7 +403,7 @@
         </div>
 
         <!-- STEP 02 -->
-        <div class="step-img-box">
+        <div class="step-img-box" id="resources">
           <img
             src="img/project/shieldCap.jpg"
             class="step-img"
@@ -437,7 +448,8 @@ Image: coloreaimagenes.net
             </p>
             <p class="step-description">
               Development of web projects, using HTML5, CSS3, Jquery, Javascript front-end technologies:
-              <ul>
+              
+              <ul class="other-projects">
                 <li><a href="https://rickandmortyapi.web.app/" target="_blank">rickandmortyapi</a></li>
                 <li><a href="https://omnifood-camilo.netlify.app/" target="_blank">Omnifood</a></li>
                 <li><a href="https://forkify-camilo-restrepo.netlify.app/" target="_blank">Forkify</a></li>
@@ -464,9 +476,19 @@ Image: coloreaimagenes.net
       <div class="title-contact">
         Contact for more details of me and my projects
     </div>
-      <div class="contact-area">
+      <div class="contact-area grid grid--2-cols">
         
-          
+        <div class="contact-img-box">
+          <picture>
+            <!-- <source srcset="img/hero.webp" type="image/webp" /> 
+            <source srcset="/img/image-comics-desktop.png" type="image/png" />-->
+            <img
+              src="/img/project/doctorStrange.jpg"
+              class="contact-img"
+              alt="Woman enjoying food, meals in storage container and food bowls on a table"
+            />
+          </picture>
+        </div>
           
           
          <div class="form-contact">
@@ -483,17 +505,7 @@ Image: coloreaimagenes.net
           </form>
         </div>
         
-        <div class="contact-img-box">
-          <picture>
-            <!-- <source srcset="img/hero.webp" type="image/webp" /> 
-            <source srcset="/img/image-comics-desktop.png" type="image/png" />-->
-            <img
-              src="/img/project/doctorStrange.jpg"
-              class="contact-img"
-              alt="Woman enjoying food, meals in storage container and food bowls on a table"
-            />
-          </picture>
-        </div>
+        
       </div>
     </section>
 
@@ -521,11 +533,11 @@ Image: coloreaimagenes.net
           <nav class="nav-col">
            
             <ul class="footer-nav">
-              <li><a class="footer-link" href="#">Mockups</a></li>
-              <li><a class="footer-link" href="#">Documentation</a></li>
-              <li><a class="footer-link" href="#">Resources</a></li>
-              <li><a class="footer-link" href="#">About this me</a></li>
-              <li><a class="footer-link" href="#">Contact</a></li>
+              <li><a class="footer-link" href="#mockups">Mockups</a></li>
+              <li><a class="footer-link" href="#documentation">Documentation</a></li>
+              <li><a class="footer-link" href="#resources">Resources</a></li>
+              <li><a class="footer-link" href="#about-this-me">About this me</a></li>
+              <li><a class="footer-link" href="#contact">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -535,17 +547,17 @@ Image: coloreaimagenes.net
           
           <ul class="social-links">
             <li>
-              <a class="footer-link" href="#"
+              <a class="footer-link" href="https://www.linkedin.com/in/christian-camilo-restrepo-gomez-831272162/" target="_blank"
                 ><ion-icon class="social-icon" name="logo-linkedin"></ion-icon></a>
             </li>
 
             <li>
-              <a class="footer-link" href="#"
+              <a class="footer-link" href="https://github.com/R4D4M4NTHYS24" target="_blank"
                 ><ion-icon class="social-icon" name="logo-github"></ion-icon></a>
             </li>
 
             <li>
-              <a class="footer-link" href="#"
+              <a class="footer-link" href="https://twitter.com/camilorg2011" target="_blank"
                 ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
               ></a>
             </li>
@@ -557,7 +569,9 @@ Image: coloreaimagenes.net
     
 
     <script src="/js/controller.js" type="module"></script>
+   
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
