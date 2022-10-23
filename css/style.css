@@ -120,6 +120,10 @@
   margin-top: 6.4rem;
 }
 
+.space-photo {
+  padding: 0px 100px;
+}
+
 .cta-img {
   width: 30rem;
   height: 28rem;
@@ -127,7 +131,7 @@
 
 .post-photo img {
   display: block;
-  width: 100%;
+  width: 30rem;
   /*transition: all 0.4s;*/
 }
 /*
@@ -301,8 +305,10 @@
 }
 
 .cards-home {
-  width: 25rem;
-  height: 30rem;
+  max-width: 30rem;
+  max-height: 35rem;
+  width: 30rem;
+  height: 35rem;
 }
 
 .post {
@@ -347,6 +353,11 @@
 .post-image img:hover {
   transform: scale(1.1);
 }
+
+.post-image-selected {
+  width: 50%;
+  height: 100%;
+}
 /*
 .character {
   width: auto;
@@ -375,6 +386,11 @@
 /***************************/
 /*MODAL*/
 /***************************/
+.modal-description {
+  text-decoration: none;
+  list-style: none;
+}
+
 .cards-modal {
   width: 50rem;
   height: 40rem;
@@ -382,11 +398,11 @@
 
 .modal-title-card {
   width: 50rem;
-  font-size: 1.6rem;
+  font-size: 3.2rem;
   text-align: center;
   padding: 3.2rem;
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  font-weight: 700;
 }
 
 .modal-description-card {
@@ -398,17 +414,20 @@
 }
 
 .modal-content {
+  margin-top: 20%;
   background-color: white;
   position: relative;
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
-  height: 80rem;
+  height: 40rem;
   width: 120rem;
   background-repeat: no-repeat;
 }
 
 .close-modal {
+  margin-top: 0;
+  color: 000;
   font-size: 3rem;
   line-height: 1.6;
 }

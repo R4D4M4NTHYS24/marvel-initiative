@@ -30,13 +30,14 @@ let randomPositions = [];
 const promises = [];
 
 /********************************flujo principal de la app **********************************/
-
+console.log(totalcharacters);
 for (let i = 0; i < 3; i++) {
   randomView.renderSpinner(frameDataRandom);
   const randomPosition =
     Math.floor(Math.random() * model.state.totalcharacters + 1) - 1;
   randomPositions.push(randomPosition);
   await model.loadCharacter(1, randomPositions[i]);
+
   promises.push(model.state.characters[0]);
 }
 
@@ -45,6 +46,7 @@ for (let j = 0; j < 3; j++) {
 }
 
 await model.loadCharacter(cardsLimit, offset);
+
 if (offset === 1) {
   buttonBack.style.display = "none";
 } else {

@@ -22,6 +22,7 @@ export const loadCharacter = async function (limit, offset) {
         thumbnail: data.data.results[i].thumbnail.path,
         extension: data.data.results[i].thumbnail.extension,
         description: data.data.results[i].description,
+        comics: data.data.results[i].comics.items.results,
       };
     }
 
