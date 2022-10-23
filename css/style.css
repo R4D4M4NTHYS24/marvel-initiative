@@ -357,6 +357,9 @@
 }
 
 .title-card {
+  height: 8rem;
+  text-decoration: none;
+  list-style: none;
   max-width: 30rem;
   max-height: 35rem;
   font-size: 1.2rem;
@@ -367,6 +370,9 @@
 }
 
 .title-name-characters {
+  height: 8rem;
+  text-decoration: none;
+  list-style: none;
   max-width: 20rem;
   max-height: 25rem;
   font-size: 1.2rem;
