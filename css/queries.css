@@ -190,24 +190,70 @@
 @media (max-width: 44em) {
   .grid--3-cols,
   .grid--4-cols {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  .diets {
-    grid-column: 1 / -1;
-    justify-self: center;
+  .tablet-size {
+    margin-left: 15vw;
   }
 
   .heading-secondary {
     margin-bottom: 4.8rem;
   }
 
-  .pricing-plan {
-    width: 100%;
+  .gridCharacters {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    padding: 1px;
+    width: 1px;
+  }
+
+  .character {
+    width: auto;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .heading-fourty {
+    display: none;
+  }
+
+  .social-links {
+    align-items: center;
+    justify-content: center;
+    margin-right: 25vw;
+    gap: 50px;
+  }
+
+  .modal-content {
+    background-color: white;
+    position: relative;
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+    height: 90rem;
+    width: 120rem;
+    background-repeat: no-repeat;
+    z-index: 9999;
+  }
+
+  .close-modal {
+    color: #000;
+    font-size: 6rem;
+    line-height: 1.6;
+    margin-left: 30vw;
+  }
+
+  .footer {
+    padding: 1rem;
   }
 
   .grid--footer {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 1fr;
+    margin-left: 35vw;
   }
 
   .logo-col,
@@ -237,6 +283,10 @@
   .grid--5-cols {
     grid-template-columns: 1fr;
     row-gap: 10rem;
+  }
+
+  .tablet-size {
+    margin-left: 3vw;
   }
 
   .gridCharacters {
@@ -337,6 +387,10 @@
     margin: auto;
   }
 */
+  .footer {
+    padding: 1rem;
+  }
+
   .grid--footer {
     grid-template-columns: 1fr;
     margin-left: 30vw;
