@@ -14,7 +14,12 @@
   }
 
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer {
+    margin-left: 8vw;
+    padding: 1rem;
   }
 }
 
@@ -33,6 +38,43 @@
     row-gap: 6.4rem;
   }
 
+  .grid--4-cols,
+  .grid--5-cols {
+    margin: 0;
+    grid-template-columns: 1fr;
+    row-gap: 10rem;
+    column-gap: 1rem;
+  }
+
+  .gridCharacters {
+    width: auto;
+    margin-bottom: 20rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .post-image-selected img {
+    max-width: 35rem;
+  }
+
+  .modal-content {
+    background-color: white;
+    position: relative;
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+    height: 40rem;
+    width: 120rem;
+    background-repeat: no-repeat;
+    z-index: 9999;
+  }
+
+  .close-modal {
+    color: #000;
+    font-size: 6rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
   .heading-secondary {
     font-size: 3.6rem;
   }
@@ -49,12 +91,9 @@
     gap: 3.2rem;
   }
 
-  .hero {
-    gap: 4.8rem;
-  }
-
-  .testimonials-container {
-    padding: 9.6rem 3.2rem;
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
   }
 }
 
@@ -66,6 +105,48 @@
   html {
     /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
+  }
+
+  .grid--3-cols,
+  .grid--4-cols,
+  .grid--5-cols {
+    margin: 0;
+    grid-template-columns: 1fr;
+    row-gap: 10rem;
+    column-gap: 1rem;
+  }
+
+  .gridCharacters {
+    width: auto;
+    margin: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .modal-content {
+    background-color: white;
+    position: relative;
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+    height: 90rem;
+    width: 120rem;
+    background-repeat: no-repeat;
+    z-index: 9999;
+  }
+
+  .close-modal {
+    color: #000;
+    font-size: 6rem;
+    line-height: 1.6;
+    margin-left: 25vw;
+  }
+
+  .tablet-size {
+    margin-left: 15vw;
+  }
+
+  .cards-modal {
+    margin-left: 7vw;
   }
 
   .hero {
@@ -105,20 +186,7 @@
   }
 
   .gallery {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .cta {
-    /* 3/5 = 60% + 2/5 = 40% */
-    grid-template-columns: 3fr 2fr;
-  }
-
-  .cta-form {
-    grid-template-columns: 1fr;
-  }
-
-  .btn--form {
-    margin-top: 1.2rem;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   /* MOBILE NAVIGATION */
@@ -202,8 +270,8 @@
   }
 
   .gridCharacters {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20rem;
     padding: 1px;
     width: 1px;
   }
@@ -286,7 +354,11 @@
   }
 
   .tablet-size {
-    margin-left: 3vw;
+    margin-left: 5vw;
+  }
+
+  .cards-modal {
+    margin-left: 15vw;
   }
 
   .gridCharacters {
