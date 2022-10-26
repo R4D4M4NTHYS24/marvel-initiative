@@ -92,8 +92,17 @@
   }
 
   .gallery {
+    margin-bottom: 10rem;
+    padding-top: 15rem;
+
     grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+    width: 100rem;
     gap: 1.2rem;
+  }
+
+  #principal-container {
+    height: 100%;
   }
 }
 
@@ -187,6 +196,11 @@
 
   .gallery {
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 30rem;
+    padding-top: 20rem;
+
+    gap: 1.2rem;
+    width: 80rem;
   }
 
   /* MOBILE NAVIGATION */
@@ -263,6 +277,7 @@
 
   .tablet-size {
     margin-left: 15vw;
+    row-gap: 2rem;
   }
 
   .heading-secondary {
@@ -281,8 +296,15 @@
   }
 
   .gallery {
+    margin-top: 30rem;
+    padding-top: 20rem;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
+    gap: 2.4rem;
+    width: 60rem;
+  }
+
+  #principal-container {
+    height: 100%;
   }
 
   .heading-fourty {
@@ -428,13 +450,14 @@
     transform: translateY(2.4rem);
   }
 
-  .testimonials {
-    grid-template-columns: 1fr;
-  }
-
   .gallery {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
+    width: 60rem;
+  }
+
+  #principal-container {
+    height: 100%;
   }
 
   .cta {
@@ -448,6 +471,10 @@
   .cta-img-box {
     height: 32rem;
     grid-row: 1;
+  }
+
+  .z-patron {
+    margin-top: 1rem;
   }
 
   .form-contact {
@@ -481,7 +508,7 @@
     max-width: 120rem;
     padding: 0 3.2rem;
     margin: 0 auto;
-    height: 90rem;
+    height: 100%;
     width: 120rem;
     background-repeat: no-repeat;
   }

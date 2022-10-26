@@ -283,6 +283,12 @@
   color: #f11e22;
 }
 
+.briefcase {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* features */
 
 .features {
@@ -348,7 +354,7 @@
 }
 
 .cards-characters {
-  margin-top: 6.4rem;
+  margin-top: 2.4rem;
 }
 
 .cards-modal {
@@ -497,31 +503,104 @@
 /* PROJECT GALLERY */
 /**************************/
 
+/*Galeria de Imagenes*/
+
 .gallery {
+  height: auto;
+  margin-top: 30rem;
+  position: relative;
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.6rem;
-  padding: 1.6rem;
+  grid-gap: 2px;
+  width: 1200px;
+  height: 800px;
+
+  padding: 6.4rem 0;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.gallery-item {
-  overflow: hidden;
-}
-
-.gallery-item img {
-  display: block;
+.gallery img {
   width: 100%;
-  height: 30rem;
-  /*transition: all 0.4s;*/
+  height: 200px;
+  transition: all 0.4s;
+  cursor: pointer;
 }
-/*
-.gallery-item img:hover {
+
+.gallery img:hover {
   transform: scale(1.1);
 }
-*/
+
+#img-active {
+  width: 100%;
+  height: 80rem;
+}
+
+/*Contenedor Principal del Lightbox*/
+
+#principal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Contenedor interno del Lightbox*/
+
+#internal-container {
+  border: 2px #f3f3f3 solid;
+  padding: 2px;
+  background: #3f3f3f;
+  max-width: 500px;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/*Botones*/
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #000;
+}
+
+#btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+#btn-up {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+#btn-down {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  font-weight: 700;
+  font-size: 6rem;
+}
 
 /**************************/
-/* HOW IT WORKS SECTION */
+/* z patron */
 /**************************/
 .step-img-box img {
   max-height: 50rem;
@@ -531,10 +610,7 @@
   font-size: 3rem;
   line-height: 1.6;
   margin-bottom: 4.8rem;
-}
-
-.section-z-patron {
-  padding: 9.6rem 0;
+  margin-top: 9.6rem;
 }
 
 .step-number {
@@ -628,6 +704,10 @@
   padding: 0.8rem;
   overflow: hidden;
   color: #000;
+}
+
+.title-contact {
+  margin-top: 9.6rem;
 }
 
 .contact label,
@@ -782,7 +862,6 @@ input[type="submit"] {
 
 .arrow-back:hover,
 .arrow-back:active {
-  background-color: #f11e22;
   display: inline-block;
   text-decoration: none;
   font-weight: 500;
@@ -792,7 +871,6 @@ input[type="submit"] {
 
 .arrow-forward:hover,
 .arrow-forward:active {
-  background-color: #f11e22;
   display: inline-block;
   text-decoration: none;
   font-weight: 500;
