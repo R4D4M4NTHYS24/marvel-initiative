@@ -384,8 +384,7 @@
   }
 
   .gridCharacters {
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     padding: 1px;
     width: 1px;
   }
@@ -401,7 +400,7 @@
 
   .post-photo {
     display: inline-block;
-    margin-left: 25%;
+    margin-left: 20%;
   }
 
   .heading-fourty {
@@ -492,7 +491,7 @@
 
   .grid--footer {
     grid-template-columns: 1fr;
-    margin-left: 30vw;
+    margin-left: 20vw;
   }
 
   .social-links {
