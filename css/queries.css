@@ -376,11 +376,11 @@
   }
 
   .tablet-size {
-    margin-left: 5vw;
+    margin-left: -30px;
   }
 
   .cards-modal {
-    margin-left: 15vw;
+    margin-left: 60px;
   }
 
   .gridCharacters {
@@ -393,14 +393,13 @@
     height: 8rem;
     font-size: 1.2rem;
     text-align: center;
-    padding: 3.2rem;
     color: #fff;
     background-color: #000;
   }
 
   .post-photo {
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 15%;
   }
 
   .heading-fourty {
@@ -452,11 +451,15 @@
   .gallery {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
-    width: 60rem;
+    width: 50rem;
   }
 
   #principal-container {
     height: 100%;
+  }
+
+  #btn-close {
+    margin-top: 30px;
   }
 
   .cta {
@@ -516,7 +519,8 @@
     color: #000;
     font-size: 6rem;
     line-height: 1.6;
-    margin-left: 40vw;
+    margin-left: 50vw;
+    margin-top: -30px;
   }
 }
 
