@@ -275,11 +275,23 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .tablet-size {
-    margin-left: 15vw;
-    row-gap: 2rem;
+  .modal-description-card {
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+
+    margin-right: 0;
+    padding-right: 0;
   }
 
+  .modal-title-card {
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+
+    margin-right: 0;
+    padding-right: 0;
+  }
   .heading-secondary {
     margin-bottom: 4.8rem;
   }
@@ -296,11 +308,10 @@
   }
 
   .gallery {
-    margin-top: 30rem;
-    padding-top: 20rem;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.4rem;
-    width: 60rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    width: 50rem;
+    margin-bottom: 150rem;
   }
 
   #principal-container {
@@ -373,33 +384,52 @@
   .grid--5-cols {
     grid-template-columns: 1fr;
     row-gap: 10rem;
+    justify-content: center;
   }
 
-  .tablet-size {
-    margin-left: -30px;
+  .modal {
+    margin: 0;
+    padding: 0;
   }
 
-  .cards-modal {
-    margin-left: 60px;
+  .modal-description-card {
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .modal-title-card {
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .mobile-size {
+    grid-template-columns: 1fr;
   }
 
   .gridCharacters {
     grid-template-columns: 1fr 1fr;
-    padding: 1px;
-    width: 1px;
+    column-gap: 1px;
   }
 
   .title-name-characters {
     height: 8rem;
     font-size: 1.2rem;
+
     text-align: center;
     color: #fff;
     background-color: #000;
   }
 
   .post-photo {
-    display: inline-block;
-    margin-left: 15%;
+    justify-content: center;
   }
 
   .heading-fourty {
@@ -449,9 +479,10 @@
   }
 
   .gallery {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
     width: 50rem;
+    margin-bottom: 150rem;
   }
 
   #principal-container {
@@ -463,7 +494,12 @@
   }
 
   .cta {
+    width: 240px;
+    display: block;
     grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
   }
 
   .cta-text-box {
@@ -519,7 +555,7 @@
     color: #000;
     font-size: 6rem;
     line-height: 1.6;
-    margin-left: 50vw;
+    margin-left: 40vw;
     margin-top: -30px;
   }
 }

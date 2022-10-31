@@ -36,7 +36,7 @@ export const printCharacterAll = function (character, frameData) {
   //es el event listener encargado de detectar el click del usuario
   postElements[0].addEventListener("click", function () {
     const modalContent = `
-    <div class="grid grid--3-cols tablet-size">
+    <div class="mobile-size">
     <ul class="modal-description">
       <li><p class="modal-title-card">${character.name}</p></li>
       <li><p class="modal-description-card">${character.description}</p></li>
