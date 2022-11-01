@@ -36,16 +36,18 @@ export const printCharacter = function (character, frameData) {
   //es el event listener encargado de detectar el click del usuario
   postElements[0].addEventListener("click", function () {
     const modalContent = `
-    <div class="mobile-size">
+    <div class="mobile-size grid grid--2-cols">
     <ul class="modal-description">
       <li><p class="modal-title-card">${character.name}</p></li>
       <li><p class="modal-description-card">${character.description}</p></li>
     </ul>
     
-    <figure class="post-image-selected">
+    <ul class="modal-image">
+    <li><figure class="post-image-selected">
         <img class="cards-modal" src="${character.thumbnail}.${character.extension}" alt="marvel-character-image">
-      </figure>
-      <a class="close-modal" href="#"><strong>X</strong></a>  
+      </figure></li>
+      <li><a class="close-modal" href="#"><strong>X</strong></a></li>
+      </ul>  
     </div>`;
     modalData.innerHTML = modalContent;
   });

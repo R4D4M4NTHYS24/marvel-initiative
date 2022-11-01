@@ -21,6 +21,13 @@
     margin-left: 8vw;
     padding: 1rem;
   }
+
+  .close-modal {
+    color: #000;
+    font-size: 6rem;
+    line-height: 1.6;
+    margin: 0;
+  }
 }
 
 /**************************/
@@ -72,7 +79,7 @@
     color: #000;
     font-size: 6rem;
     line-height: 1.6;
-    margin: 0;
+    margin: -2vw;
   }
 
   .heading-secondary {
@@ -131,37 +138,58 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+  .modal-description-card {
+    max-width: 400px;
+    text-align: center;
+    justify-content: center;
+
+    margin-left: 4vw;
+  }
+
+  .modal-title-card {
+    text-align: center;
+    justify-content: center;
+
+    margin-left: 4vw;
+  }
+
   .modal-content {
+    top: 30vh;
     background-color: white;
     position: relative;
     max-width: 120rem;
     padding: 0 3.2rem;
     margin: 0 auto;
-    height: 90rem;
+    height: 40rem;
     width: 120rem;
     background-repeat: no-repeat;
     z-index: 9999;
   }
 
   .close-modal {
+    display: block;
     color: #000;
     font-size: 6rem;
     line-height: 1.6;
-    margin-left: 25vw;
+    margin-left: -50vw;
   }
 
   .tablet-size {
-    margin-left: 15vw;
+    margin-left: 0;
   }
 
-  .cards-modal {
-    margin-left: 7vw;
+  .post-image-selected {
+    margin-left: 5vw;
   }
 
   .hero {
     grid-template-columns: 1fr;
     padding: 0 8rem;
     gap: 6.4rem;
+  }
+
+  .icons-home {
+    max-width: 9rem;
   }
 
   .hero-text-box,
@@ -182,18 +210,6 @@
     height: 2.4rem;
   }
 
-  .step-number {
-    font-size: 7.4rem;
-  }
-
-  .meal-content {
-    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
-  }
-
-  .section-testimonials {
-    grid-template-columns: 1fr;
-  }
-
   .gallery {
     grid-template-columns: repeat(4, 1fr);
     margin-top: 30rem;
@@ -201,6 +217,10 @@
 
     gap: 1.2rem;
     width: 80rem;
+  }
+
+  #btn-close {
+    margin-top: 5vh;
   }
 
   /* MOBILE NAVIGATION */
@@ -276,22 +296,19 @@
   }
 
   .modal-description-card {
-    max-width: 300px;
     text-align: center;
     justify-content: center;
-
-    margin-right: 0;
-    padding-right: 0;
   }
 
   .modal-title-card {
-    max-width: 300px;
     text-align: center;
     justify-content: center;
-
-    margin-right: 0;
-    padding-right: 0;
   }
+
+  .post-image-selected {
+    margin: center;
+  }
+
   .heading-secondary {
     margin-bottom: 4.8rem;
   }
@@ -329,7 +346,12 @@
     gap: 50px;
   }
 
+  .mobile-size {
+    grid-template-columns: 1fr;
+  }
+
   .modal-content {
+    top: 0;
     background-color: white;
     position: relative;
     max-width: 120rem;
@@ -341,11 +363,18 @@
     z-index: 9999;
   }
 
+  .modal-image {
+    list-style: none;
+    display: block;
+    align-items: top;
+  }
+
   .close-modal {
     color: #000;
     font-size: 6rem;
     line-height: 1.6;
-    margin-left: 30vw;
+
+    margin-left: 20vw;
   }
 
   .footer {
@@ -494,7 +523,7 @@
   }
 
   #btn-close {
-    margin-top: 30px;
+    margin-top: 5vh;
   }
 
   .cta {
@@ -545,6 +574,7 @@
   }
 
   .modal-content {
+    top: 0;
     background-color: white;
     position: relative;
     max-width: 120rem;
@@ -555,12 +585,18 @@
     background-repeat: no-repeat;
   }
 
+  .modal-image {
+    list-style: none;
+    display: block;
+    align-items: top;
+  }
+
   .close-modal {
     color: #000;
     font-size: 6rem;
     line-height: 1.6;
+
     margin-left: 40vw;
-    margin-top: -30px;
   }
 }
 
