@@ -416,6 +416,10 @@
     justify-content: center;
   }
 
+  .section-project {
+    margin-top: 10rem;
+  }
+
   .modal {
     margin: 0;
     padding: 0;
@@ -448,8 +452,20 @@
   }
 
   .gridCharacters {
+    /*margin-left: 22rem;*/
     grid-template-columns: 1fr 1fr;
     column-gap: 1px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    width: 40rem;
+    margin: auto auto;
+    padding: 0 4.8rem;
   }
 
   .title-name-characters {

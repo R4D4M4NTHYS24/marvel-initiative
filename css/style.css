@@ -337,9 +337,10 @@
 }
 
 .cards-characters {
+  display: block;
   margin-top: 2.4rem;
-  min-width: 20rem;
-  min-height: 25rem;
+  width: 20rem;
+  height: 25rem;
 }
 
 .post {
@@ -427,6 +428,10 @@
   font-size: 2rem;
   line-height: 1.6;
   text-align: center;
+}
+
+.section-project {
+  margin-top: 20rem;
 }
 
 /***************************/
@@ -940,11 +945,11 @@ input[type="submit"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4.8rem;
+
   position: relative;
-  max-width: 40rem;
+  width: 120rem;
   margin: 6.4rem auto;
-  padding: 0 3.2rem;
+  padding: 0 4.8rem;
 }
 
 .button-back {

@@ -8,8 +8,10 @@ const frameDataCharacters = document.querySelector(".character");
 const buttonForward = document.querySelector(".button-forward");
 const buttonBack = document.querySelector(".button-back");
 const postElementsAll = document.getElementsByClassName("post");
-const form = document.getElementById("form");
+const form = document.getElementById("contact");
 let name = document.getElementById("name");
+let email = document.getElementById("email");
+let message = document.getElementById("message");
 
 let userObject = {};
 //const pagination = document.querySelector(".pagination");
@@ -199,15 +201,17 @@ btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
 
-/***************** formulario de contacto ****************************
-console.log(form);
+/***************** formulario de contacto ****************************/
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   userObject.name = name.value;
   userObject.email = email.value;
   userObject.message = message.value;
-  console.log("envie");
   localStorage.setItem("submit", JSON.stringify(userObject));
-  console.log(userObject);
+  name.value = "";
+  email.value = "";
+  message.value = "Your message was sent successfully";
+
+  //console.log(userObject);
 });
-*/

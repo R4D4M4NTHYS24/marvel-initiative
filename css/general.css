@@ -92,12 +92,13 @@ body {
 
 .gridCharacters {
   display: grid;
+
   column-gap: 1px;
   row-gap: 9.6rem;
   padding: 1.6rem;
   width: 120rem;
-  margin: auto;
-  margin-bottom: 20rem;
+
+  margin-bottom: 10rem;
 }
 
 .grid--2-cols {
