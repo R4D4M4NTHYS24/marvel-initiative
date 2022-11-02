@@ -617,6 +617,31 @@ button {
   margin-top: 9.6rem;
 }
 
+.repo {
+  text-decoration: none;
+  list-style: none;
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.repo {
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.repo:hover,
+.repo:active {
+  color: #f11e22;
+}
+
+.resources-used {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
 .step-number {
   font-size: 8.6rem;
   font-weight: 600;
