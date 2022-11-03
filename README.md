@@ -1,7 +1,9 @@
 # marvel-initiative
- project that seeks to show part of my skills as a frontend developer
+ Project that seeks to show part of my skills as a frontend developer
 
-The purpose of this project is to make my skills in web development known. To do so, I prototyped with figma. You can visit the following link to visualize the design of the different views. Based on mockups made on paper.
+The purpose of this project is to make my skills in web development known. To do so, I prototyped with figma. You can visit the following link to visualize the design of the different views. Based on mockups made on paper:
+https://www.figma.com/file/umbkrtjDlsxdarS51ZwBmp/marvelPrototype?node-id=0%3A1
+
 The web technologies present in the project are:
 HTML5 and CSS3 used for fully responsive structuring and design. This is achieved using the flexbox and css grid technologies in addition to the semantic tags that correspond to each type of content.
 
