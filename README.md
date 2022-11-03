@@ -9,7 +9,9 @@ HTML5 and CSS3 used for fully responsive structuring and design. This is achieve
 
 For the functionality of the site, Javascript is used in its pure form without the use of frameworks.
 The architecture of the project is MVC (model view controller)
+
 SPA operation
+
 Welcome to my version of the Marvel comics universe through its different sections you can learn about the 1562 characters that are part of said universe. This is achieved through 4 sections (home, characters, Project, contact) that we can see as follows:
 
 Home: You find the welcome, features with their respective description and a component that by using the official Marvel API randomly brings 3 characters and shows them on the screen (whenever you enter the website these 3 characters will be different)
